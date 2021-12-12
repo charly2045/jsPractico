@@ -41,11 +41,13 @@ const salariosSpOrdenada = salariosSp.sort(function(salaryA, salaryB){
 
 const medianaGeneralSpain = medianaSalarios(salariosSpOrdenada);
 
-const spliceStart = 
+const spliceStart = (salariosSpOrdenada.length * 90) / 100;
+const spliceCount = salariosSpOrdenada.length - spliceStart;
 
-const salariosTop10 = salariosSpOrdenada.splice();
+const salariosTop10 = salariosSpOrdenada.splice(spliceStart, spliceCount);
 
+const medianaTop10Spain = medianaSalarios(salariosTop10);
 
 // Llamamos a la función salariosMediada con la lista de salarios ordenada como argumento
 
-console.log(medianaGeneralSpain, medianaTop10Spain));
+console.log(medianaGeneralSpain, medianaTop10Spain);
